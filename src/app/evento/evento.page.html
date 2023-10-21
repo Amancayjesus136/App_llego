@@ -4,19 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" [fullscreen]="true">
+<ion-content [fullscreen]="true">
 
-    <h1>Fiesta de Hallowen</h1>
-    <h3>23/10/2023 11:00pm</h3>
-    <h5>Lugar: Casa de Luchito</h5>
-    <h5>Notas: Venir disfrazados</h5>
-    <hr>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>{{ evento.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ evento.fecha | date : 'dd/MM/y hh:mm a' }}</ion-card-subtitle>
+        <p>{{ evento.lugar }}</p>
+        <p>{{ evento.notas }}</p>
+      </ion-card-content>
+      <ion-list>
+        <ion-item>
+            <ul>
+              <li>Superman</li>
+              <li>Batman</li>
+              <li>Flash</li>
+            </ul>
+        </ion-item>
+      </ion-list>
+    </ion-card>
 
-    <h2>Asistentes</h2>
-    <ul>
-      <li>Superman</li>
-      <li>Batman</li>
-      <li>Flash</li>
-    </ul>
+    
   
 </ion-content>
