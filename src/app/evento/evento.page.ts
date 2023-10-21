@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventoPage implements OnInit {
 
+  evento : any = {}; 
+
   constructor(
     private route: ActivatedRoute,
     private http : HttpClient
@@ -25,7 +27,9 @@ export class EventoPage implements OnInit {
           return obj.id === evento_id;
         });
       console.log(results[0])
+      this.evento = results[0];
       })
+
     /* LLAMAMOS NUEVAMENTE A TODO EL JSON DE EVENTOS*/
   });
 }
