@@ -6,12 +6,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- CONTENIDO -->
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content [fullscreen]="true">
+ 
+  <ion-card *ngFor="let evento of eventos" (click)="verdetalle(evento)">
+    <ion-card-header>
+      <ion-card-title class="ion-text-uppercase">{{ evento.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ evento.fecha | date : 'dd/MM/y hh:mm a' }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-icon name="location-outline"></ion-icon> {{ evento.lugar }} <br>
+      <ion-icon name="document-text-outline"></ion-icon> {{ evento.notas }}
+    </ion-card-content>
+  
+    <ion-row justify-content-center>
+      <ion-col>
+        <ion-button expand="full" fill="outline" color="primary">DE ROMPE</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" fill="outline" color="danger">NO LA HAGO</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  
+
+
 </ion-content>
+
+<!-- CONTENIDO -->
+
