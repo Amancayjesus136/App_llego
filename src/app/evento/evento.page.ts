@@ -14,9 +14,21 @@ export class EventoPage implements OnInit {
     private http : HttpClient
     ) {
         this.route.params.subscribe(params => {
-          console.log(params['id']);
-     });
-    }
+          const evento_id = params['id'];
+    
+    /* LLAMAMOS NUEVAMENTE A TODO EL JSON DE EVENTOS*/
+
+    this.http.get<any>('assets/eventos.json')
+      .subscribe(data => {
+
+        const results = data.eventos.filter((obj: {id: string;}) => {
+          return obj.id === evento_id;
+        });
+      console.log(results[0])
+      })
+    /* LLAMAMOS NUEVAMENTE A TODO EL JSON DE EVENTOS*/
+  });
+}
 
   ngOnInit() {
   }
