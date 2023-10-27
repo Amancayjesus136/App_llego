@@ -13,7 +13,7 @@ export class Tab1Page {
   eventos: any = [];
 
   constructor(private http: HttpClient, private route: Router) {
-    this.http.get<any>('assets/eventos.json')
+    this.http.get<any>('http://localhost:3000/eventos/listado')
       .subscribe(data => {
         console.log('eventos', data);
         this.eventos = data.eventos;
