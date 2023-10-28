@@ -21,7 +21,7 @@ export class Tab1Page {
   }
 
   verdetalle(evento: any){
-    this.route.navigate(['/evento/'+evento.id])
+    this.route.navigate(['/evento/'+evento._id])
   }
 
 }
