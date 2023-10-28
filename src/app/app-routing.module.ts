@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'evento/:id',
     loadChildren: () => import('./evento/evento.module').then( m => m.EventoPageModule)
+  },
+  {
+    path: 'amigo',
+    loadChildren: () => import('./amigo/amigo.module').then( m => m.AmigoPageModule)
   }
 ];
 @NgModule({
