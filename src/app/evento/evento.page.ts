@@ -22,6 +22,7 @@ export class EventoPage implements OnInit {
           + evento_id)
           .subscribe(data => {
             console.log('eventos', data);
+            this.evento = data.eventos;
           })
   });
 }
