@@ -20,6 +20,10 @@ export class Tab1Page {
       });
   }
 
+  abrirRegistrarevento() {
+    this.route.navigate(['/registrarevento']);
+  }
+
   verdetalle(evento: any){
     this.route.navigate(['/evento/'+evento._id])
   }
