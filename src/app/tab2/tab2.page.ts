@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
   amigos: any = []; 
 
   constructor(private http: HttpClient, private route: Router) {
@@ -17,4 +18,9 @@ export class Tab2Page {
         this.amigos = data.amigos;
       });
   }
+
+  abrirRegistraramigo() {
+    this.route.navigate(['/registraramigo']);
+  }
+  
 }
