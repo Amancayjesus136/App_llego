@@ -9,30 +9,36 @@
     <ion-item class="ion-margin">
       <ion-icon slot="start" name="person-circle-outline"></ion-icon>
       <ion-label>
-        <ion-input placeholder="Nombre" clearInput></ion-input>
+        <ion-input placeholder="Nombre" [(ngModel)]="nombre" clearInput></ion-input>
       </ion-label>
     </ion-item>
   
     <ion-item class="ion-margin">
       <ion-icon slot="start" name="calendar-outline"></ion-icon>
       <ion-label>
-        <ion-input placeholder="Fecha" clearInput></ion-input>
+        <ion-input type="date" placeholder="Fecha" [(ngModel)]="fecha" clearInput></ion-input>
       </ion-label>
     </ion-item>
   
     <ion-item class="ion-margin">
       <ion-icon slot="start" name="location-outline"></ion-icon>
       <ion-label>
-        <ion-input placeholder="Lugar" clearInput></ion-input>
+        <ion-input placeholder="Lugar" [(ngModel)]="lugar" clearInput></ion-input>
       </ion-label>
     </ion-item>
   
     <ion-item class="ion-margin">
       <ion-icon slot="start" name="clipboard-outline"></ion-icon>
       <ion-label>
-        <ion-input placeholder="Notas" clearInput></ion-input>
+        <ion-input placeholder="Notas" [(ngModel)]="notas" clearInput></ion-input>
       </ion-label>
     </ion-item>
+
+    <ion-button expand="block" class="ion-margin" (click)="guardar()">
+      <ion-icon name="send" slot="start"></ion-icon>
+      Registrar
+    </ion-button>
+    
   </ion-list>
   
 </ion-content>

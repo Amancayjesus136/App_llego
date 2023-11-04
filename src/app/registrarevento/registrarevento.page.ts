@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrareventoPage implements OnInit {
 
+  nombre: any = '';
+  fecha: any = '';
+  lugar: any = '';
+  notas: any = '';
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  guardar() {
+    let data = {
+      'nombre': this.nombre,
+      'fecha': this.fecha,
+      'lugar': this.lugar,
+      'notas': this.notas
+    }
+    console.log(data);
+  };
 
 }
