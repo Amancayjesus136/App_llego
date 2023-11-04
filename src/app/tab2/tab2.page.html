@@ -7,24 +7,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header">
-        <ion-label>First Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">First Content</div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header">
-        <ion-label>Second Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Second Content</div>
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header">
-        <ion-label>Third Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Third Content</div>
-    </ion-accordion>
-  </ion-accordion-group>
+  <ion-list>
+    <ion-item *ngFor="let amigo of amigos" lines="full">
+      <ion-avatar slot="start">
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>
+          <ion-icon name="person"></ion-icon> {{ amigo.nombre_completo }}
+        </h2>
+        <p>
+          <ion-icon name="call"></ion-icon> {{ amigo.telefono }}
+        </p>
+        <p>
+          <ion-icon name="calendar"></ion-icon> {{ amigo.cumpleanos }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
