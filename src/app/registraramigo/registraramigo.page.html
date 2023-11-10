@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrar Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--------------------------------/*FORMULARIO DE REGISTRAR EVENTO*/-------------------------------------------------->
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Nombre completo" [(ngModel)]="nombre_completo" clearInput></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Teléfono" [(ngModel)]="telefono" clearInput type="tel"></ion-input>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="calendar-outline"></ion-icon>
+      <ion-label>
+        <ion-input type="date" placeholder="Cumpleaños" [(ngModel)]="cumpleanos" clearInput></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-button expand="block" class="ion-margin" (click)="guardar()">
+      <ion-icon name="send" slot="start"></ion-icon>
+      Registrar
+    </ion-button>
+  </ion-list>
+</ion-content>
+
+<!--------------------------------/*FORMULARIO DE REGISTRAR EVENTO*/-------------------------------------------------->
+
