@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registraramigo',
@@ -10,8 +12,21 @@ export class RegistraramigoPage implements OnInit {
   nombre_completo: any = '';
   telefono: any = '';
   cumpleanos: any = '';
+  notificar: boolean = false;
 
-   constructor(private http: HttpClient) {}
+  botones = [
+    {
+      text: 'Regresar',
+      handler: () => {
+        this.route.navigate(['/tabs/tab2']);
+      },
+    },
+  ];
+
+
+  constructor(
+    private http: HttpClient,
+    private route: Router) {}
 
   ngOnInit() {
   }
@@ -26,6 +41,8 @@ export class RegistraramigoPage implements OnInit {
 
     this.http.post(url, data).subscribe(data => {
       console.log('respuesta', data);
+
+      this.notificar = true;
     });
   };
 
