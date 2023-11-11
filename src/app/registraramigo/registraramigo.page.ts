@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registraramigo',
@@ -10,7 +11,7 @@ export class RegistraramigoPage implements OnInit {
   telefono: any = '';
   cumpleanos: any = '';
 
-  constructor() { }
+   constructor(private http: HttpClient) {}
 
   ngOnInit() {
   }
@@ -21,7 +22,11 @@ export class RegistraramigoPage implements OnInit {
       'telefono': this.telefono,
       'cumpleanos': this.cumpleanos,
     }
-    console.log(data);
+    let url = 'http://localhost:3000/amigos/registrar';
+
+    this.http.post(url, data).subscribe(data => {
+      console.log('respuesta', data);
+    });
   };
 
 }

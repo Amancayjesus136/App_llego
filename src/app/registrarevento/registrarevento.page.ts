@@ -12,7 +12,7 @@ export class RegistrareventoPage implements OnInit {
   fecha: any = '';
   lugar: any = '';
   notas: any = '';
-  eventos: any = []; // Assuming you have an events array to store the response
+  eventos: any = []; 
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +27,7 @@ export class RegistrareventoPage implements OnInit {
       'notas': this.notas
     };
 
-    let url = 'http://localhost:3000/eventos/registrar'; // Removed the quotes around 'url'
+    let url = 'http://localhost:3000/eventos/registrar';
 
     this.http.post(url, valores).subscribe(data => {
       console.log('respuesta', data);
