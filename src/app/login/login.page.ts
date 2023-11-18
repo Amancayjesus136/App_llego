@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router  } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,16 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  correo: string = '';
+  email: string = '';
   contrasena : string = '';
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
+
+  ingresar(){
+    localStorage.setItem('user', this.email);
+    this.route.navigate(['/']);
+  }
 
   ngOnInit() {
     
   }
 
-  ingresar(){
 
-  }
+  
 }
