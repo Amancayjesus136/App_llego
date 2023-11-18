@@ -14,7 +14,7 @@ export class Tab1Page {
 
   constructor(private http: HttpClient, private route: Router) {
 
-      //validamos si estamos logueados antes de traer los eventos
+    //validamos si estamos logueados antes de traer los eventos
 
     let user = localStorage.getItem('user');
     if (user == null) {
