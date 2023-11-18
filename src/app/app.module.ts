@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginPipe } from './login.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginPipe],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

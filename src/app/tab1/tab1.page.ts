@@ -13,6 +13,15 @@ export class Tab1Page {
   eventos: any = [];
 
   constructor(private http: HttpClient, private route: Router) {
+
+      //validamos si estamos logueados antes de traer los eventos
+
+    let user = localStorage.getItem('user');
+    if (user == null) {
+      this.route.navigate(['/login']);
+    }
+
+
     this.http.get<any>('http://localhost:3000/eventos/listado')
       .subscribe(data => {
         console.log('eventos', data);

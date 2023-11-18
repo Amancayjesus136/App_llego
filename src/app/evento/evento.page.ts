@@ -15,6 +15,7 @@ export class EventoPage implements OnInit {
     private route: ActivatedRoute,
     private http : HttpClient
     ) {
+
         this.route.params.subscribe(params => {
           const evento_id = params['id'];
 
