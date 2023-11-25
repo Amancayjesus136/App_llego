@@ -31,8 +31,4 @@ export class AmigoPage implements OnInit {
   ngOnInit() {
   }
 
-  
-
-  
-
 }
