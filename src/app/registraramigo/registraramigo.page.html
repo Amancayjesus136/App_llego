@@ -28,6 +28,20 @@
         <ion-input type="date" placeholder="Cumpleaños" [(ngModel)]="cumpleanos" clearInput></ion-input>
       </ion-label>
     </ion-item>
+    
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Email" [(ngModel)]="email" clearInput></ion-input>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Contraseña" [(ngModel)]="contrasena" clearInput type="password"></ion-input>
+      </ion-label>
+    </ion-item>
 
     <ion-button expand="block" class="ion-margin" (click)="guardar()">
       <ion-icon name="send" slot="start"></ion-icon>

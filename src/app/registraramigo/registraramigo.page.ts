@@ -12,6 +12,8 @@ export class RegistraramigoPage implements OnInit {
   nombre_completo: any = '';
   telefono: any = '';
   cumpleanos: any = '';
+  email: any = '';
+  contrasena: any = '';
   notificar: boolean = false;
 
   botones = [
@@ -36,6 +38,8 @@ export class RegistraramigoPage implements OnInit {
       'nombre_completo': this.nombre_completo,
       'telefono': this.telefono,
       'cumpleanos': this.cumpleanos,
+      'email': this.email,
+      'contrasena': this.contrasena,
     }
     let url = 'http://localhost:3000/amigos/registrar';
 
