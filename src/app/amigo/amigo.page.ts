@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { Firestore, doc, docData } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-amigo',
@@ -7,23 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmigoPage implements OnInit {
 
-  nombre_completo: any = '';
-  telefono: any = '';
-  cumpleanos: any = '';
+  amigo : any = {}; 
+  firestore: Firestore = inject(Firestore);
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private http : HttpClient
+  ) {
+    this.route.params.subscribe(params => {
+      const amigo_id = params['id'];
+
+      const amigo = doc(this.firestore, 'eventos/'+ amigo_id);
+      docData<any>(amigo).subscribe(data => {
+        this.amigo = data;
+      });
+
+    });
+  }
 
   ngOnInit() {
   }
 
-  guardar() {
-    let data = {
-      'nombre_completo': this.nombre_completo,
-      'telefono': this.telefono,
-      'cumpleanos': this.cumpleanos,
-    }
-    console.log(data);
-  };
+  
 
   
 
