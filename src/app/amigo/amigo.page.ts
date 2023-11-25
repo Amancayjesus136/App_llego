@@ -20,7 +20,7 @@ export class AmigoPage implements OnInit {
     this.route.params.subscribe(params => {
       const amigo_id = params['id'];
 
-      const amigo = doc(this.firestore, 'eventos/'+ amigo_id);
+      const amigo = doc(this.firestore, 'amigos/'+ amigo_id);
       docData<any>(amigo).subscribe(data => {
         this.amigo = data;
       });

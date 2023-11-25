@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router  } from '@angular/router';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -21,8 +21,8 @@ export class Tab2Page {
     this.route.navigate(['/login']);
   }
 
-  const eventoCollection = collection(this.firestore, 'amigos');
-    this.amigos = collectionData(eventoCollection);
+  const amigoCollection = collection(this.firestore, 'amigos');
+  this.amigos = collectionData(amigoCollection, {idField: '_id'});
 
   // constructor(private http: HttpClient, private route: Router) {
   //   this.http.get<any>('http://localhost:3000/amigos/listado')
@@ -36,6 +36,10 @@ export class Tab2Page {
 
   abrirRegistraramigo() {
     this.route.navigate(['/registraramigo']);
+  }
+
+  verdetalle(amigo: any){
+    this.route.navigate(['/amigo/'+amigo._id])
   }
   
 }

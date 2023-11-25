@@ -8,10 +8,11 @@
 
     <ion-card>
       <ion-card-content>
-        <ion-card-title>{{ amigo?.nombre }}</ion-card-title>
-        <ion-card-subtitle>{{ amigo?.fecha | date : 'dd/MM/y hh:mm a' }}</ion-card-subtitle>
-        <p>{{ amigo?.lugar }}</p>
-        <p>{{ amigo?.notas }}</p>
+        <ion-card-title>{{ amigo?.nombre_completo }}</ion-card-title>
+        <ion-card-subtitle>{{ amigo?.cumpleanos }}</ion-card-subtitle>
+        <p>{{ amigo?.telefono }}</p>
+        <p>{{ amigo?.email }}</p>
+        <p>{{ amigo?.contrasena }}</p>
       </ion-card-content>
       <ion-list>
         <ion-item>
