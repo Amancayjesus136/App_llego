@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-registrarevento',
@@ -14,7 +15,9 @@ export class RegistrareventoPage implements OnInit {
   lugar: any = '';
   notas: any = '';
   eventos: any = [];
+
   notificar: boolean = false;
+  firestore: Firestore = inject(Firestore);
 
   botones = [
     {
@@ -40,13 +43,20 @@ export class RegistrareventoPage implements OnInit {
       'notas': this.notas
     };
 
-    let url = 'http://localhost:3000/eventos/registrar';
+    console.log(valores);
 
-    this.http.post(url, valores).subscribe(data => {
-      console.log('respuesta', data);
+    addDoc(collection(this.firestore, "eventos"), valores);
+    this.notificar = true;
+    
+    
 
-      this.notificar = true;
-    });
+    // let url = 'http://localhost:3000/eventos/registrar';
+
+    // this.http.post(url, valores).subscribe(data => {
+    //   console.log('respuesta', data);
+
+    //   this.notificar = true;
+    // });
   }
 
 }
