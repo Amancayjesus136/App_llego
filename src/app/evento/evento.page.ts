@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Firestore, doc, docData } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-evento',
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EventoPage implements OnInit {
 
   evento : any = {}; 
+  firestore: Firestore = inject(Firestore);
 
   constructor(
     private route: ActivatedRoute,
@@ -19,12 +21,17 @@ export class EventoPage implements OnInit {
         this.route.params.subscribe(params => {
           const evento_id = params['id'];
 
-          this.http.get<any>('http://localhost:3000/eventos/detalle/'
-          + evento_id)
-          .subscribe(data => {
-            console.log('eventos', data);
-            this.evento = data.eventos;
-          })
+          const evento = doc(this.firestore, 'eventos/'+ evento_id);
+          docData<any>(evento).subscribe(data => {
+            this.evento = data;
+          });
+
+          // this.http.get<any>('http://localhost:3000/eventos/detalle/'
+          // + evento_id)
+          // .subscribe(data => {
+          //   console.log('eventos', data);
+          //   this.evento = data.eventos;
+          // })
   });
 }
 

@@ -27,7 +27,7 @@ export class Tab1Page {
     // traermos lo eventos de fire
 
     const eventoCollection = collection(this.firestore, 'eventos');
-    this.eventos = collectionData(eventoCollection);
+    this.eventos = collectionData(eventoCollection, {idField: '_id'});
 
 
     // this.http.get<any>('http://localhost:3000/eventos/listado')

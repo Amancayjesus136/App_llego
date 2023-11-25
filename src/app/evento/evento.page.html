@@ -8,10 +8,10 @@
 
     <ion-card>
       <ion-card-content>
-        <ion-card-title>{{ evento.nombre }}</ion-card-title>
-        <ion-card-subtitle>{{ evento.fecha | date : 'dd/MM/y hh:mm a' }}</ion-card-subtitle>
-        <p>{{ evento.lugar }}</p>
-        <p>{{ evento.notas }}</p>
+        <ion-card-title>{{ evento?.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ evento?.fecha | date : 'dd/MM/y hh:mm a' }}</ion-card-subtitle>
+        <p>{{ evento?.lugar }}</p>
+        <p>{{ evento?.notas }}</p>
       </ion-card-content>
       <ion-list>
         <ion-item>
