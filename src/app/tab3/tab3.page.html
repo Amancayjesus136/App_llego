@@ -1,17 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let empresa of empresas | async" (click)="verdetalleempresa(empresa)" lines="full">
+      <ion-avatar slot="start">
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>
+          <ion-icon name="person"></ion-icon> {{ empresa.nombre }}
+        </h2>
+        <p>
+          <ion-icon name="call"></ion-icon> {{ empresa.direccion }}
+        </p>
+        <p>
+          <ion-icon name="calendar"></ion-icon> {{ empresa.tipo }}
+        </p>
+        <p>
+          <ion-icon name="mail"></ion-icon> {{ empresa.numero_empleado }}
+        </p>
+        <p>
+          <ion-icon name="lock-closed"></ion-icon> {{ empresa.estado }}
+        </p>
+      </ion-label>
+      
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="abrirRegistraramigo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

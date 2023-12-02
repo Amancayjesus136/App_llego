@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrar Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--------------------------------/*FORMULARIO DE REGISTRAR EVENTO*/-------------------------------------------------->
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Nombre completo" [(ngModel)]="nombre" clearInput></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Direccion" [(ngModel)]="direccion" clearInput type="tel"></ion-input>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="calendar-outline"></ion-icon>
+      <ion-label>
+        <ion-input type="number" placeholder="Numero de empleado" [(ngModel)]="numero_empleado" clearInput></ion-input>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-label>Tipo</ion-label>
+      <ion-select placeholder="Selecciona el tipo" [(ngModel)]="tipo">
+        <ion-select-option value="Peruana">Peruana</ion-select-option>
+        <ion-select-option value="Extranjera">Extranjera</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    
+    <ion-item class="ion-margin">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Estado" [(ngModel)]="estado" clearInput type="number"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-button expand="block" class="ion-margin" (click)="guardar()">
+      <ion-icon name="send" slot="start"></ion-icon>
+      Registrar
+    </ion-button>
+  </ion-list>
+</ion-content>
+
+<!--------------------------------/*FORMULARIO DE REGISTRAR EVENTO*/-------------------------------------------------->
+
+<!--------------------------------/*ALERTA DE REGISTRAR EVENTO*/-------------------------------------------------->
+<ion-alert
+  [isOpen]="notificar"
+  header="Contacto registrado exitosamente"
+  message="Puedes ir a los eventos para verlo"
+  [buttons]="botones"
+></ion-alert>
+<!--------------------------------/*ALERTA DE REGISTRAR EVENTO*/-------------------------------------------------->
+

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>{{ empresas?.nombre }}</ion-card-title>
+        <ion-card-title>{{ empresas?.direccion }}</ion-card-title>
+        <p>{{ empresas?.numero_empleado }}</p>
+        <p>{{ empresas?.tipo }}</p>
+        <p>{{ empresas?.estado }}</p>
+      </ion-card-content>
+      <ion-list>
+        <ion-item>
+            <ul>
+              <li>Superman</li>
+              <li>Batman</li>
+              <li>Flash</li>
+            </ul>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    
+  
+</ion-content>
